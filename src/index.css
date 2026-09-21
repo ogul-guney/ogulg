@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fbfbfb;
+    color: #111111;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  html.dark {
+    /* Sophisticated dark slate / graphite - easy on the eyes, NOT harsh AMOLED black */
+    background-color: #18181b;
+    color: #f4f4f5;
+    color-scheme: dark;
+  }
+
+  ::selection {
+    background-color: #e5e5e5;
+    color: #111111;
+  }
+
+  html.dark ::selection {
+    background-color: #3f3f46;
+    color: #f4f4f5;
+  }
+}
